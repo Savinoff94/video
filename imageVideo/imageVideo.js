@@ -1,10 +1,10 @@
 // needed consts
-const onHover = true;
+const onHover = false;
 const body = document.getElementsByTagName('body')[0];
-const radius = 600;
+const radius = 400;
 const marker = 'markedS';
-const videoAttributesHoverOff = ['controls', 'autoplay', {name:'media'}];
-const videoAttributesHoverON = ['controls', {name:'media'}];
+const videoAttributesHoverOff = ['autoplay', {name:'media'}];
+const videoAttributesHoverON = [{name:'media'}];
 const sourseAttributes = [{src:'https://apv-static.minute.ly/videos/v-50bc6db9-a73b-49b1-966838-aa07-4f3bbace5851-s29.92-37.16m.mp4'},
 {type:'video/mp4'}];
 
@@ -145,7 +145,7 @@ function job(array){
         drawCircle(array[0],radius);
         addVideo(array[0], onHover);
         let filteredArray = array.filter((item) => {
-            item.setAttribute('class', marker)
+            // item.setAttribute('class', marker)
             return !isOverlapped(array[0],item,radius);
         })
         // console.log('filtered array:', filteredArray);
