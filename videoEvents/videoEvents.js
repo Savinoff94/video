@@ -21,7 +21,7 @@ videosArr.forEach((item, index) => {
     })
 
     video.on('seeked', () => {
-    console.log(`seeked from time ${video.controlBar.progressControl.seekBar.currentTime_} to ${video.currentTime()} (video ${item.src})`)
+    console.log(`seeked to ${video.currentTime()} (video ${item.src})`)
     })
 
     video.on('seeking', () => {
