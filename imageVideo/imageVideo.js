@@ -11,6 +11,15 @@ const sourseAttributes = [{src:'https://apv-static.minute.ly/videos/v-50bc6db9-a
 //get all images from document and make array
 let imagesCollection = document.getElementsByTagName('img');
 let imagesArray = Array.from(imagesCollection);
+
+//to exclude square images
+imagesArray = imagesArray.filter((item) => {
+    if(item.offsetHeight == item.offsetWidth){
+        return false;
+    }else{
+        return true;
+    }
+})
 // console.log('imagesArray', imagesArray);
 
 //get coordinates from element
@@ -137,7 +146,7 @@ function isOverlapped(item1,item2,radius){
     })
     return answer;
 }
-let lastImage = null;
+// let lastImage = null;
 
 function job(array){
     if(array.length > 0){
