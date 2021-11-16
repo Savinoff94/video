@@ -1,5 +1,5 @@
 // needed consts
-const onHover = false;
+const onHover = true;
 const body = document.getElementsByTagName('body')[0];
 const radius = 400;
 const marker = 'markedS';
@@ -98,6 +98,7 @@ function addVideo(image, onHover){
     video.appendChild(sourse);
 
     videoPlacementAndSize(video,image);
+    
     body.appendChild(video);
 }
 // returns coordinates of the center of element
@@ -150,7 +151,7 @@ function isOverlapped(item1,item2,radius){
 
 function job(array){
     if(array.length > 0){
-        lastImage = array[0];
+        // lastImage = array[0];
         drawCircle(array[0],radius);
         addVideo(array[0], onHover);
         let filteredArray = array.filter((item) => {
